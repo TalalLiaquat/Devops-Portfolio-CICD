@@ -18,6 +18,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # ✅ AWS CLI install (IMPORTANT FIX)
+      - run: sudo apt-get update && sudo apt-get install -y awscli
+
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
