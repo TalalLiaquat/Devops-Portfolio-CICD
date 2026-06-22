@@ -1,4 +1,4 @@
-name: Deploy Pipeline
+﻿name: Deploy to S3
 
 on:
   push:
@@ -15,15 +15,13 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install
+      - run: npm ci
       - run: npm run build
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy to S3
-        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} --delete
+      - run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} --delete

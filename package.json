@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "echo \"lint passed\"",
-    "test": "echo \"test passed\""
+    "lint": "echo \"no lint\"",
+    "test": "echo \"no test\""
   },
   "dependencies": {
     "react": "^18.2.0",
