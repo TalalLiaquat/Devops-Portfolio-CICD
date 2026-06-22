@@ -1,47 +1,74 @@
-🚀 DevOps CI/CD Pipeline – React App
+# DEVOPS CI/CD PIPELINE – REACT APP
 
-This project demonstrates a complete CI/CD pipeline using GitHub Actions and deployment to AWS S3.
+## PROJECT OVERVIEW
 
-⚙️ CI/CD Overview
-🟢 CI (Continuous Integration)
+This project demonstrates a complete CI/CD pipeline using GitHub Actions and AWS S3.
 
-Runs on every push / pull request:
+It automatically runs:
+- Code Linting
+- Testing
+- Build Process
+- Deployment to AWS S3
 
-Lint code
-Run tests
-Build project
-🔵 CD (Continuous Deployment)
+## CI PIPELINE
 
-Runs on push to main branch:
+Runs automatically on every push and pull request.
 
-Build production files
-Deploy dist/ folder to AWS S3
-📊 Status
-CI Pipeline
+Jobs:
+- Lint code
+- Run tests
+- Build project
 
-Deploy Pipeline
+All jobs run in parallel.
 
-👉 View all workflow runs:
+## CD PIPELINE
+
+Runs automatically when code is pushed to the main branch.
+
+Steps:
+- Build production files
+- Upload build folder to AWS S3
+- Deploy static website
+
+## STATUS BADGES
+
+CI Pipeline:
+
+[![CI Pipeline](https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions/workflows/ci.yml/badge.svg)](https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions/workflows/ci.yml)
+
+Deploy Pipeline:
+
+[![Deploy to S3](https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions/workflows/deploy.yml/badge.svg)](https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions/workflows/deploy.yml)
+
+## WORKFLOW LINK
+
 https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions
 
-☁️ Deployment
-Hosting: AWS S3 Static Website
-Output folder: dist/
-Auto deployment on push to main
-🧰 Tech Stack
-React (Vite)
-GitHub Actions
-AWS S3
-Node.js
-npm
-🔑 GitHub Secrets Used
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-AWS_REGION
-S3_BUCKET
-🏁 Result
+## AWS DEPLOYMENT
 
-✔ CI runs successfully
-✔ Build successful
-✔ Deploy to S3 successful
-✔ GitHub Actions fully working
+Hosted on AWS S3 Static Website Hosting.
+
+Build Output Folder:
+dist/
+
+## TECHNOLOGIES USED
+
+- React (Vite)
+- GitHub Actions
+- AWS S3
+- Node.js
+- npm
+
+## GITHUB SECRETS USED
+
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_REGION
+- S3_BUCKET
+
+## FINAL RESULT
+
+CI pipeline working ✔  
+Build successful ✔  
+Deploy successful ✔  
+Full automation achieved ✔
