@@ -23,7 +23,7 @@ const projectsData = [
     title: 'Serverless OTP System',
     description: 'Implemented an OTP verification flow using AWS Lambda and Amazon SES.',
     icon: 'fas fa-lock',
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop',
   },
   {
     title: 'CI/CD Pipeline',
