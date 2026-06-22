@@ -1,56 +1,94 @@
-🚀 DevOps CI/CD Pipeline – React App
+🚀 DevOps CI/CD Pipeline (React + AWS S3)
 
-This project demonstrates a complete CI/CD pipeline using GitHub Actions and deployment to AWS S3.
+A complete CI/CD pipeline using GitHub Actions that automates:
 
-It automatically runs Lint, Test, Build, and Deploy whenever code is pushed to the main branch.
+Code Quality Checks (CI)
+Build Process
+Deployment to AWS S3 (CD)
+📊 System Architecture (Flow)
+        ┌──────────────────────────┐
+        │      GitHub Repo         │
+        └──────────┬───────────────┘
+                   │ push / PR
+                   ▼
+        ┌──────────────────────────┐
+        │        CI PIPELINE       │
+        │                          │
+        │  ┌───────┐ ┌────────┐    │
+        │  │ Lint  │ │ Test   │    │
+        │  └───────┘ └────────┘    │
+        │        ┌────────┐        │
+        │        │ Build  │        │
+        │        └────────┘        │
+        └──────────┬───────────────┘
+                   │ success
+                   ▼
+        ┌──────────────────────────┐
+        │        CD PIPELINE       │
+        │     Deploy to AWS S3     │
+        └──────────┬───────────────┘
+                   │
+                   ▼
+        ┌──────────────────────────┐
+        │   Live Static Website    │
+        │   (AWS S3 Bucket URL)    │
+        └──────────────────────────┘
+⚙️ CI Pipeline (Continuous Integration)
 
-⚙️ CI/CD Pipeline Overview
-🟢 Continuous Integration (CI)
+Runs automatically on every:
 
-On every push / pull request:
+Push
+Pull Request
+Jobs:
 
-✔ Lint code quality check
-✔ Run tests
-✔ Build project
+✔ Lint (code quality check)
+✔ Test (unit tests)
+✔ Build (production build)
 
-All CI jobs run in parallel using GitHub Actions.
+All jobs run in parallel (same box).
 
-🔵 Continuous Deployment (CD)
+🚀 CD Pipeline (Continuous Deployment)
 
-On push to main branch:
+Runs only when:
+
+Code is pushed to main branch
+Steps:
 
 ✔ Build production files
-✔ Deploy dist/ folder to AWS S3 bucket
-📊 CI/CD Status
+✔ Upload dist/ folder
+✔ Deploy to AWS S3 bucket
 
-👉 View full workflow runs here:
+📊 GitHub Actions Status
+
+👉 View Workflow Runs:
 https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions
 
-☁️ Live Deployment
-
-The application is automatically deployed to AWS S3 after successful CI checks.
-
-🛠️ Tech Stack
+☁️ AWS Deployment
+Hosting: Amazon S3 Static Website
+Output Folder: dist/
+Auto deployed via GitHub Actions
+🧰 Tech Stack
 React (Vite)
 GitHub Actions (CI/CD)
 AWS S3 (Hosting)
 Node.js
 npm
-📁 Workflow Structure
-CI Pipeline
- ├── lint
- ├── test
- └── build
-        ↓
-CD Pipeline
- └── deploy to S3
-🔑 AWS Setup Used
-IAM User with S3 access
-GitHub Secrets:
+🔑 GitHub Secrets Used
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_REGION
 S3_BUCKET
-📌 Author
+🧠 CI/CD Logic
+CI (Parallel)
+ ├── Lint
+ ├── Test
+ └── Build
+        ↓
+CD (Separate)
+ └── Deploy to S3
+📌 Result
 
-Talal Liaquat
+✔ Fully automated pipeline
+✔ Clean CI/CD separation
+✔ Production build deployed automatically
+✔ Real DevOps workflow implemented
