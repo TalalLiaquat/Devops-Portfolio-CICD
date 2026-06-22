@@ -1,5 +1,7 @@
 # DevOps Portfolio
 
+[![CI](https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions/workflows/ci.yml/badge.svg)](https://github.com/TalalLiaquat/Devops-Portfolio-CICD/actions/workflows/ci.yml)
+
 A modern, responsive single-page portfolio website built with React and Vite. Perfect for showcasing DevOps projects and skills with a professional design.
 
 ## Features
